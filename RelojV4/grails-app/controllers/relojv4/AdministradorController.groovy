@@ -11,11 +11,13 @@ class AdministradorController {
 	
 	
 	def obtenerEmpleados(){
+		
 		def c=Empleado.createCriteria()
 		def branchCount = c.list {
 			projections{
 				property("id")
 				property("nombre")
+				property("curp")
 			}
 		}
 		def pa=[:]
@@ -29,28 +31,19 @@ class AdministradorController {
 			
 		}
 		
-		//mynewJSON.putAt("rows", 745).toString()
-		//mynewJSON.putAt("prueba", "fsasaf").toString()
-		
-		//mi['perrito']="fsa"
-		
-		
-		
 		for(int i=0;i<branchCount.size();i++){
 			Array=branchCount.get(i)
 			pa['id']=Array[0]
 			pa['nombre']=Array[1]
+			pa['curp']=Array[2]
 			result.push(pa)
 			pa=null
-			pa=[:]
 		}
 		
 		mynewJSON.putAt("rows", result).toString()
-		mynewJSON.putAt("total", 15).toString()
+		mynewJSON.putAt("total",branchCount.size() ).toString()
 		
-		println("datos:___________")
-		println(mynewJSON)
-		println(result)
+		
 		render(mynewJSON as JSON);
 		
 		

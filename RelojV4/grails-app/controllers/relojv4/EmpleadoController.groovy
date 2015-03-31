@@ -20,6 +20,10 @@ class EmpleadoController {
     def show(Empleado empleadoInstance) {
         respond empleadoInstance
     }
+	
+	def menu(){
+		
+	}
 
     def create() {
         respond new Empleado(params)

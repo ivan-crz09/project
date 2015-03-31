@@ -132,6 +132,18 @@ img {
 	text-indent: -9999px;
 }
 
+/*JQuery validate */
+
+.my-error-class {
+        color:red;
+        border-color:red;
+
+    }
+    .my-valid-class {
+        color:green;
+        border-color:green;
+ }
+
 /* NAVIGATION MENU */
 
 .nav {

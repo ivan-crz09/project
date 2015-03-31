@@ -8,13 +8,9 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 			
 		<script>
-  		
 		    $(document).ready(function(){
-		
 		        $('#table').bootstrapTable({
 		          url: '<g:createLink controller="Administrador" action="obtenerEmpleados"/>'
-		          
-		          
 		        });
 		
 		    });
@@ -22,9 +18,12 @@
 	</head>
 	<body>
 	
+	
+	
 	<div id="page-wrapper">
+	<!-- menu incluido -->
+			<g:render template="menu"></g:render>
             <div class="container-fluid">
-            
             
 				<table id="table" data-height="400" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true">
 				    <thead>
